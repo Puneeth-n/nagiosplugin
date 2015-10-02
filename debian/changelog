@@ -1,0 +1,12 @@
+nagiosplugin (1.2.2-2) unstable; urgency=low
+
+  * updated dependencies
+
+ -- Arthur Lutz <arthur.lutz@logilab.fr>  Fri, 11 Mar 2015 10:31:12 +0100
+
+nagiosplugin (1.2.2-1) unstable; urgency=low
+
+  * source package automatically created by stdeb 0.6.0+git and slighly
+    modified 
+
+ -- Arthur Lutz <arthur.lutz@logilab.fr>  Fri, 13 Feb 2015 15:47:23 +0100

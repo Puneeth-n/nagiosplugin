@@ -1,0 +1,89 @@
+Development
+===========
+
+Getting the source
+------------------
+
+The source can be obtained via mercurial from
+https://bitbucket.org/flyingcircus/nagiosplugin::
+
+   hg clone https://bitbucket.org/flyingcircus/nagiosplugin
+
+
+Developer build
+---------------
+
+First, create a virtualenv if not already present::
+
+   virtualenv -p python3.4 .
+
+Then create a developer build::
+
+   bin/pip install -r requirements.txt
+
+
+Tests
+-----
+
+Run unit tests::
+
+   bin/py.test
+
+Our `build server`_ runs test against the trunk on a regular basis.
+
+.. image:: https://builds.gocept.com/job/nagiosplugin/badge/icon
+   :target: https://builds.gocept.com/job/nagiosplugin/
+.. _build server: https://builds.gocept.com/job/nagiosplugin/
+
+Test all supported Python versions::
+
+  bin/tox
+
+`nagiosplugin` also includes support for coverage reports. It aims at 100% test
+coverage where possible. Coverage reports are automatically created on each test
+run and can be found in the `htmlcov` directory.
+
+
+Documentation
+-------------
+
+The documentation uses Sphinx. Build the documentation::
+
+   make -C doc html
+
+You may run the supplied examples with the local interpreter::
+
+   bin/python src/nagiosplugin/examples/check_load.py
+
+
+Release builds
+--------------
+
+To create a source distribution, run::
+
+   bin/python setup.py sdist
+
+To create a wheel, run::
+
+   bin/python setup.py bdist_wheel
+
+
+How to release
+--------------
+
+* Ensure that all relevant changes are mentioned in `HISTORY.txt`.
+* Invoke the `release` utility from `zest.releaser`_.
+* CD into the tag checkout directory created by zest.releaser.
+* Follow the instructions in the official `packaging guide`_ to upload a
+  package.
+* Upload docs using `bin/python setup.py upload_docs`.
+
+`nagiosplugin` tries to obey the semantic version numbering specification
+published on SemVer_ but adapts it a little bit to be `PEP 386`_ compliant.
+
+.. _packaging guide: https://packaging.python.org/en/latest/distributing.html#packaging-your-project
+.. _SemVer: http://semver.org/
+.. _PEP 386: http://www.python.org/dev/peps/pep-0386/
+.. _zest.releaser: https://pypi.python.org/pypi/zest.releaser/
+
+.. vim: set ft=rst spell spelllang=en:

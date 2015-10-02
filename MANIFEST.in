@@ -1,0 +1,6 @@
+include CHANGES.txt
+include CONTRIBUTORS.txt
+include HACKING.txt
+include LICENSE.txt
+include README.txt
+include version.txt

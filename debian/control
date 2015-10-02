@@ -1,0 +1,31 @@
+Source: nagiosplugin
+Maintainer: Arthur Lutz <arthur.lutz@logilab.fr>
+Section: python
+Priority: optional
+Build-Depends: python-setuptools (>= 0.6b3), python-all (>= 2.6.6-3), debhelper (>= 7)
+Standards-Version: 3.9.6
+
+Package: python-nagiosplugin
+Architecture: all
+Depends: ${misc:Depends}, ${python:Depends}, python-stevedore (>= 1.1.0), python-six (>= 1.9.0)
+Description: Class library for writing Nagios (Icinga) plugins
+ The nagiosplugin library
+ ========================
+ .
+ About
+ -----
+ .
+ nagiosplugin is a Python class library which helps writing Nagios (or Icinga)
+ compatible plugins easily in Python. It cares for much of the boilerplate code
+ and default logic commonly found in Nagios checks, including:
+ .
+ - Nagios 3 Plugin API compliant parameters and output formatting
+ - Full Nagios range syntax support
+ - Automatic threshold checking
+ - Multiple independend measures
+ - Custom status line to communicate the main point quickly
+ - Long output and performance data
+ - Timeout handling
+ - Persistent "cookies" to retain state information between check runs
+ - Resume log file processing at the point where the last run left
+ - No dependencies beyond the Python standard library (except for Python 2.6).
